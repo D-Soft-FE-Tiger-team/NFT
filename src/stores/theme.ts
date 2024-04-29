@@ -6,7 +6,7 @@ const useThemeStore = defineStore("theme", () => {
     const isDark = ref(false);
     
     const initTheme = () => {
-        const storedTheme = localStorage.getItem("th
+        const storedTheme = localStorage.getItem("theme");
         isDark.value = storedTheme === Themes.Dark;
     };
 
