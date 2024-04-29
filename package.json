@@ -16,7 +16,9 @@
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run format"
     ]
   },
   "dependencies": {
