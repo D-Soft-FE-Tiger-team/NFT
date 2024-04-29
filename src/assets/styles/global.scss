@@ -1,17 +1,16 @@
-body{
-    font-family: 'Courier New', Courier, monospace;
-    font-family: var(--ff-primary);
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--ff-primary);
 }
 
 .wrapper {
-    margin: 0 auto;
-    background-color: var(--bg-c-primary);
-
+  margin: 0 auto;
+  background-color: var(--bg-c-primary);
 }
 
 .container {
-    padding: 0 20px;
-    height: 100%;
-    max-width: 1416px;
-    margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  max-width: 1416px;
+  margin: 0 auto;
 }

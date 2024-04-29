@@ -1,31 +1,31 @@
-import { Themes } from "@/types";
-import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { Themes } from '@/types'
+import { defineStore } from 'pinia'
+import { computed, ref } from 'vue'
 
-const useThemeStore = defineStore("theme", () => {
-    const isDark = ref(false);
-    
-    const initTheme = () => {
-                    const storedTheme = localStorage.getItem("theme");
-        isDark.value = storedTheme === Themes.Dark;
-    };
+const useThemeStore = defineStore('theme', () => {
+  const isDark = ref(false)
 
-    const toggleDark = () => {
-        isDark.value = !isDark.value;
-        localStorage.setItem("theme", isDark.value ? Themes.Dark : Themes.Light);
-    };
+  const initTheme = () => {
+    const storedTheme = localStorage.getItem('theme')
+    isDark.value = storedTheme === Themes.Dark
+  }
 
-    const currentTheme = computed(() => {
-        return isDark.value ? "dark-theme" : "light-theme";
-    });
+  const toggleDark = () => {
+    isDark.value = !isDark.value
+    localStorage.setItem('theme', isDark.value ? Themes.Dark : Themes.Light)
+  }
 
-    initTheme();
+  const currentTheme = computed(() => {
+    return isDark.value ? 'dark-theme' : 'light-theme'
+  })
 
-    return {
-        isDark,
-        toggleDark,
-        currentTheme
-    };
-});
+  initTheme()
 
-export default useThemeStore;
+  return {
+    isDark,
+    toggleDark,
+    currentTheme,
+  }
+})
+
+export default useThemeStore

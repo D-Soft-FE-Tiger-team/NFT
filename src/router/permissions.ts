@@ -1,5 +1,3 @@
-import router from ".";
+import router from '.'
 
-router.beforeEach(() => {
-    
-})
+router.beforeEach(() => {})
