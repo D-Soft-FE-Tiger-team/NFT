@@ -3,15 +3,11 @@ import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
 const useThemeStore = defineStore("theme", () => {
-    const isDark = ref<boolean>(false);
+    const isDark = ref(false);
     
-    const init = () => {
-        const storedTheme = localStorage.getItem("theme");
-        if (storedTheme === Themes.Dark) {
-            isDark.value = true;
-        } else if (storedTheme === Themes.Light) {
-            isDark.value = false;
-        }
+    const initTheme = () => {
+                            const storedTheme = localStorage.getItem("theme");
+        isDark.value = storedTheme === Themes.Dark;
     };
 
     const toggleDark = () => {
@@ -23,7 +19,7 @@ const useThemeStore = defineStore("theme", () => {
         return isDark.value ? "dark-theme" : "light-theme";
     });
 
-    init();
+    initTheme();
 
     return {
         isDark,
