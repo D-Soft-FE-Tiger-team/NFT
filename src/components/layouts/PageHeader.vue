@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <header>header</header>
+  <header class="page-header"></header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.page-header {
+  height: 100px;
+}
+</style>

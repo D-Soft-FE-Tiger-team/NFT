@@ -1,18 +1,10 @@
-<!-- <script setup lang="ts">
-import type { PropType } from 'vue'
+<script setup lang="ts">
 import { useField } from 'vee-validate'
 
-import BaseInput from './BaseInput.vue'
+import BaseTextarea from './BaseTextarea.vue'
 import BaseLabel from './BaseLabel.vue'
 
-type InputType = 'text' | 'email' | 'password' | 'number' | undefined
-
 const props = defineProps({
-  type: {
-    type: String as PropType<InputType>,
-    default: 'text',
-    validator: (value: string) => ['text', 'email', 'password', 'number'].includes(value),
-  },
   id: {
     type: String,
     default: '',
@@ -44,7 +36,7 @@ const { errorMessage } = useField(() => props.name)
     <BaseLabel class="" :for="props.name" :required="props.required">
       {{ props.label }}
     </BaseLabel>
-    <BaseInput :type="props.type" :id="props.id" :name="props.name" :placeholder="props.placeholder" />
+    <BaseTextarea :id="props.id" :name="props.name" :placeholder="props.placeholder" />
     <span class="" v-if="errorMessage">{{ errorMessage }}</span>
   </div>
 </template>
@@ -55,4 +47,4 @@ const { errorMessage } = useField(() => props.name)
   flex-direction: column;
   gap: 9px;
 }
-</style> -->
+</style>

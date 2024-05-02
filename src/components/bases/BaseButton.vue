@@ -2,8 +2,8 @@
 import { computed, type PropType } from 'vue'
 
 type ButtonType = 'button' | 'submit' | 'reset' | undefined
-type VariantType = 'filled' | 'gradient' | 'outlined' | 'text' | undefined
-type SizeType = 'large' | 'medium' | 'small' | undefined
+type VariantType = 'filled' | 'gradient' | 'outlined' | 'text' | 'icon' | undefined
+type SizeType = 'large' | 'medium' | 'small' | 'extraSmall' | undefined
 
 const props = defineProps({
   type: {
@@ -14,12 +14,12 @@ const props = defineProps({
   variant: {
     type: String as PropType<VariantType>,
     default: 'gradient',
-    validator: (value: string) => ['filled', 'gradient', 'outlined', 'text'].includes(value),
+    validator: (value: string) => ['filled', 'gradient', 'outlined', 'text', 'icon'].includes(value),
   },
   size: {
     type: String as PropType<SizeType>,
     default: 'medium',
-    validator: (value: string) => ['large', 'medium', 'small'].includes(value),
+    validator: (value: string) => ['large', 'medium', 'small', 'extraSmall'].includes(value),
   },
   leftIcon: {
     type: Object,
@@ -43,6 +43,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  classes: {
+    type: String,
+    required: false,
+  },
 })
 
 const emit = defineEmits(['click', 'mouseleave'])
@@ -57,6 +61,8 @@ const variantClass = computed(() => {
       return 'outlined'
     case 'text':
       return 'text'
+    case 'icon':
+      return 'icon'
     default:
       return 'gradient'
   }
@@ -70,6 +76,8 @@ const sizeClass = computed(() => {
       return 'medium'
     case 'small':
       return 'small'
+    case 'extraSmall':
+      return 'extraSmall'
     default:
       return 'medium'
   }
@@ -80,25 +88,30 @@ const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
 
 <template>
   <button
-    :class="['btn', variantClass, sizeClass, fullWidthClass]"
+    :type="props.type"
     :disabled="props.disable || props.loading"
     @click="emit('click')"
+    :class="['btn', variantClass, sizeClass, fullWidthClass, classes]"
     v-bind="$attrs"
   >
-    <component :is="props.leftIcon" v-if="!props.loading" />
+    <component :is="props.leftIcon" v-if="!props.loading" class="btn-left-icon" />
     <span v-if="!props.loading" class="btn-text">
       <slot />
     </span>
-    <component :is="props.rightIcon" v-if="!props.loading" />
+    <component :is="props.rightIcon" v-if="!props.loading" class="btn-right-icon" />
   </button>
 </template>
 
 <style lang="scss" scoped>
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
   padding: 6px 24px;
   height: 50px;
   border-radius: 90px;
-  gap: 8px;
+  font-family: var(--ff-primary);
   cursor: pointer;
 
   .btn-text {
@@ -106,6 +119,11 @@ const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
     font-weight: 700;
     line-height: 20px;
     align-content: center;
+  }
+
+  .btn-left-icon,
+  .btn-right-icon {
+    flex: none;
   }
 
   &.filled {
@@ -124,6 +142,15 @@ const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
     color: var(--c-black-1);
   }
 
+  &.icon {
+    height: 44px;
+    width: 44px;
+    border-radius: 90px;
+    background-color: var(--c-white-1);
+    border: 2px solid var(--c-gray-3);
+    color: var(--c-black-1);
+  }
+
   &.large {
     width: 200px;
   }
@@ -136,8 +163,18 @@ const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
     width: 140px;
   }
 
+  &.extraSmall {
+    width: 70px;
+    height: 44px;
+  }
+
   &.fullWidth {
     width: 100%;
+  }
+
+  &:disabled {
+    opacity: 50%;
+    cursor: auto;
   }
 }
 </style>

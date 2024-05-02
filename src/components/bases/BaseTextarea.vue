@@ -22,7 +22,7 @@ const { value } = useField(() => props.name)
     v-bind="$attrs"
     spellcheck="false"
     class="base-textarea"
-  ></textarea>
+  />
 </template>
 
 <style lang="scss" scoped>
