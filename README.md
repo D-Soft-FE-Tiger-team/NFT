@@ -37,32 +37,40 @@ npm run build
 ```sh
 npm run cm
 ```
+
 Sellect commit type
+
 ```sh
 All lines except first will be wrapped after 100 characters.
-? ***************** 🎼🎧🎉 Select the type of change that you're committing *****************: 
-  👷 build:     Add or update regards to build process 
-  🐎 ci:        Add or update regards to CI process 
-  ✨ feat:      Adding a new feature 
-❯ 🐛 fix:       Fixing a bug 
-  🚧 wip:       Work in progress 
-  💄 style:     Add or update styles, ui or ux 
-  🔨 refactor:  Code change that neither fixes a bug nor adds a feature 
+? ***************** 🎼🎧🎉 Select the type of change that you're committing *****************:
+  👷 build:     Add or update regards to build process
+  🐎 ci:        Add or update regards to CI process
+  ✨ feat:      Adding a new feature
+❯ 🐛 fix:       Fixing a bug
+  🚧 wip:       Work in progress
+  💄 style:     Add or update styles, ui or ux
+  🔨 refactor:  Code change that neither fixes a bug nor adds a feature
 
 ```
+
 Viết mô tả ngắn cho commit:
+
 ```sh
 ? 🔖 Subject - Write a SHORT, IMPERATIVE tense description of the change:
  setup eslint & prettier & commitlint
 
 ```
+
 Viết mô tả dài cho commit (optional)
+
 ```sh
 ? 📝 Body - Provide a LONGER description of the change (optional). Use "|" to break new line:
  // này thì tuỳ chọn nếu bạn nào muốn viết chi tiết thì ghi ở đây
 
 ```
+
 Viết số issue trong task của mình (optional)
+
 ```sh
 ? 🔚 List any ISSUES CLOSED by this change (optional). E.g.: #31, #34:
   #Issue-1
@@ -70,12 +78,13 @@ Viết số issue trong task của mình (optional)
 ```
 
 Confirm your commit
+
 ```sh
 
 ###--------------------------------------------------------###
 :bug: fix(all platforms): setup eslint \& prettier \& commitlint
 ###--------------------------------------------------------###
 
-? 😄 Are you sure you want to proceed with the commit above? (Yneh) 
+? 😄 Are you sure you want to proceed with the commit above? (Yneh)
 
 ```
