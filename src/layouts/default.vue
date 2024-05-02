@@ -9,7 +9,7 @@ const { toggleDark } = useThemeStore()
 <template>
   <div class="wrapper" :class="[currentTheme]">
     <main>
-      <button @click="toggleDark">Theme</button>
+      <button @click="toggleDark">Change Theme</button>
       <slot />
     </main>
   </div>
