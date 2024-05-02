@@ -1,6 +1,7 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import useThemeStore from '@/stores/theme'
+import PageHeader from '@/components/layouts/PageHeader.vue'
 
 const { currentTheme } = storeToRefs(useThemeStore())
 const { toggleDark } = useThemeStore()
@@ -8,6 +9,7 @@ const { toggleDark } = useThemeStore()
 
 <template>
   <div class="wrapper" :class="[currentTheme]">
+    <PageHeader />
     <main>
       <button @click="toggleDark">Change Theme</button>
       <slot />
