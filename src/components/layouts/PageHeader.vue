@@ -4,16 +4,16 @@ import { storeToRefs } from 'pinia'
 
 import IconBrand from '@/components/icons/IconBrand.vue'
 import IconSearch from '@/components/icons/IconSearch.vue'
-import IconImage from '@/components/icons/IconImage.vue'
-import IconPlus from '@/components/icons/IconPlus.vue'
 import IconDown from '@/components/icons/IconDown.vue'
 import IconMoon from '@/components/icons/IconMoon.vue'
 import IconSun from '@/components/icons/IconSun.vue'
-import IconBell from '@/components/icons/IconBell.vue'
 import IconCart from '@/components/icons/IconCart.vue'
+import IconWallet from '@/components/icons/IconWallet.vue'
+
 
 import BaseButton from '@/components/bases/BaseButton.vue'
 import BaseSwitch from '@/components/bases/BaseSwitch.vue'
+import BaseAvatar from '@/components/bases/BaseAvatar.vue'
 import useThemeStore from '@/stores/theme'
 import { NAVBAR_ITEMS } from '@/constants/constant.ts'
 
@@ -28,7 +28,7 @@ const handleToggleShowMenu = () => {
 </script>
 
 <template>
-  <header class="page-header">
+  <header class="page-header container">
     <div class="header-container">
       <div class="header-left">
         <RouterLink to="/">
@@ -66,8 +66,8 @@ const handleToggleShowMenu = () => {
             <input placeholder="Seach..." class="search-input" />
           </div>
         </div>
-        <BaseButton size="extraSmall" :leftIcon="IconPlus" :rightIcon="IconImage"></BaseButton>
-        <IconBell />
+        <BaseButton size="large" :leftIcon="IconWallet">Connect Wallet</BaseButton>
+        <BaseAvatar/>
         <RouterLink><IconCart /></RouterLink>
       </div>
     </div>
@@ -78,15 +78,15 @@ const handleToggleShowMenu = () => {
 .page-header {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 28px;
   height: 100px;
 
   .header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
     gap: 28px;
-    padding: 14px auto;
 
     .header-left {
       display: flex;

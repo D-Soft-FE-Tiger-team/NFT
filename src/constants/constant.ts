@@ -94,3 +94,61 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     ],
   },
 ]
+
+interface LinkSocial {
+  id: number
+  name: string
+  url: string
+}
+
+export const LINKS_SOCIAL_MEDIA: LinkSocial[] = [
+  {
+    id: 1,
+    url: 'https://www.instagram.com/',
+    name: 'instagram',
+  },
+  {
+    id: 2,
+    url: 'https://www.facebook.com/',
+    name: 'facebook',
+  },
+  {
+    id: 3,
+    url: 'https://www.twitter.com/',
+    name: 'twitter',
+  },
+  {
+    id: 4,
+    url: 'https://www.tiktok.com/',
+    name: 'tiktok',
+  },
+  {
+    id: 5,
+    url: 'https://www.youtube.com/',
+    name: 'youtube',
+  },
+  {
+    id: 6,
+    url: 'https://www.telegram.com/',
+    name: 'telegram',
+  },
+]
+
+export const FOOTER_LINKS = [
+  {
+    'Quick Link': [
+      { label: 'About Us', path: '/about-us' },
+      { label: 'NFTs', path: '/nfts' },
+      { label: 'Collection', path: '/collection' },
+      { label: 'Sellers', path: '/sellers' },
+    ],
+  },
+  {
+    Community: [
+      { label: 'How it works', path: '/how-it-works' },
+      { label: 'FAQs', path: '/faqs' },
+      { label: 'News', path: '/news' },
+      { label: 'Join Community', path: '/join-community' },
+    ],
+  },
+]

@@ -46,7 +46,7 @@ const emit = defineEmits(['handleToggleSwitch'])
   cursor: pointer;
   border-radius: 20px;
   border: 1px solid #792d1080;
-  background-color: var(--c-white-1);
+  background-color: var(--bg-c-primary);
 
   .left-icon,
   .right-icon {

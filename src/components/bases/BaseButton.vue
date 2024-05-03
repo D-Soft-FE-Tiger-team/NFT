@@ -110,9 +110,8 @@ const roundedClass = computed(() => (props.rounded ? 'rounded-full' : null))
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  // padding: 6px 24px;
-  height: 50px;
+  gap: 8px;
+  height: 44px;
   font-family: var(--ff-primary);
   cursor: pointer;
 
@@ -145,7 +144,7 @@ const roundedClass = computed(() => (props.rounded ? 'rounded-full' : null))
   }
 
   &.large {
-    width: 200px;
+    padding: 10px 21px
   }
 
   &.medium {

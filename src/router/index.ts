@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LayoutDefault from '@/layouts/LayoutDefault.vue'
 import HomeView from '@/views/HomeView.vue'
+import LayoutDefault from '@/layouts/LayoutDefault.vue'
+import LayoutStyleGude from '@/layouts/LayoutStyleGude.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,10 @@ const router = createRouter({
           component: HomeView,
         },
       ],
+    },
+    {
+      path: '/style-guide',
+      component: LayoutStyleGude,
     },
   ],
 })

@@ -1,21 +1,17 @@
 <script setup>
-import { storeToRefs } from 'pinia'
-import useThemeStore from '@/stores/theme'
 import PageHeader from '@/components/layouts/PageHeader.vue'
 import PageFooter from '@/components/layouts/PageFooter.vue'
-
-const { currentTheme } = storeToRefs(useThemeStore())
-const { toggleDark } = useThemeStore()
+import BaseDotBg from '@/components/bases/BaseDotBg.vue';
 </script>
-
 <template>
-  <div class="wrapper" :class="[currentTheme]">
+  <div class="wrapper">
     <PageHeader />
     <main>
-      <button @click="toggleDark">Theme</button>
       <slot />
     </main>
     <PageFooter />
+    <BaseDotBg top="-350px" left="-350px"/>
+    <BaseDotBg top="200px" right="100px"/>
   </div>
 </template>
 <style lang="scss"></style>

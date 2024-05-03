@@ -1,5 +1,6 @@
 body {
   font-family: var(--ff-primary);
+  background-color: var(--bg-c-primary);
 }
 
 .wrapper {
@@ -9,7 +10,6 @@ body {
 
 .container {
   padding: 0 20px;
-  height: 100%;
   max-width: 1416px;
   margin: 0 auto;
 }

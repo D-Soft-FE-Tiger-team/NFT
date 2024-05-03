@@ -1,7 +1,8 @@
 :root {
   //### color
-  --c-brand-1: linear-gradient(85deg, var(--c-orange-1) 0%, var(--c-red-1) 100%);
-  --c-brand-2: linear-gradient(225deg, var(--c-orange-1) 0%, var(--c-red-1) 100%);
+  --c-brand-1: linear-gradient(85deg, var(--c-orange-2) 0%, var(--c-red-1) 100%);
+  --c-brand-2: linear-gradient(225deg, var(--c-orange-2) 0%, var(--c-red-1) 100%);
+  --c-brand-3: linear-gradient(85deg, #ffc57e 25%, #ff5c00 80%);
   --c-orange-1: #c0542b;
   --c-orange-2: #fe8c00;
   --c-orange-3: #f4b7a1;
@@ -33,18 +34,18 @@
   //### text color
   --text-c-primary: var(--c-black-1);
   --text-c-secondary: var(--c-gray-2);
+  --text-c-paragraph: var(--c-gray-2);
+
+  // light
+  --c-primary: var(--c-orange-1);
+  --bg-c-dot-bg: linear-gradient(85deg, var(--c-orange-2) 0%, var(--c-orange-2) 100%);
 }
 
-.dark-theme {
+.dark {
   --c-primary: var(--c-orange-3);
   --bg-c-primary: var(--c-black-1);
   --text-c-primary: var(--c-white-1);
   --text-c-secondary: var(--c-gray-1);
-}
-
-.light-theme {
-  --c-primary: var(--c-orange-1);
-  --bg-c-primary: var(--c-white-1);
-  --text-c-primary: var(--c-black-1);
-  --text-c-secondary: var(--c-gray-1);
+  --text-c-paragraph: var(--c-white-1);
+  --bg-c-dot-bg: var(--c-brand-2);
 }

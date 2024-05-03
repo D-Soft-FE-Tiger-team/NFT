@@ -76,7 +76,7 @@ const tagClass = computed(() => {
     font-size: 18px;
     line-height: 27px;
     font-weight: 500;
-    color: var(--c-gray-2);
+    color: var(--text-c-paragraph);
   }
 }
 </style>
