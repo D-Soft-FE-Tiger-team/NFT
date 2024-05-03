@@ -10,7 +10,6 @@ import IconSun from '@/components/icons/IconSun.vue'
 import IconCart from '@/components/icons/IconCart.vue'
 import IconWallet from '@/components/icons/IconWallet.vue'
 
-
 import BaseButton from '@/components/bases/BaseButton.vue'
 import BaseSwitch from '@/components/bases/BaseSwitch.vue'
 import BaseAvatar from '@/components/bases/BaseAvatar.vue'
@@ -67,7 +66,7 @@ const handleToggleShowMenu = () => {
           </div>
         </div>
         <BaseButton size="large" :leftIcon="IconWallet">Connect Wallet</BaseButton>
-        <BaseAvatar/>
+        <BaseAvatar />
         <RouterLink><IconCart /></RouterLink>
       </div>
     </div>

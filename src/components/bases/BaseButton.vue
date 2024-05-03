@@ -144,7 +144,7 @@ const roundedClass = computed(() => (props.rounded ? 'rounded-full' : null))
   }
 
   &.large {
-    padding: 10px 21px
+    padding: 10px 21px;
   }
 
   &.medium {
