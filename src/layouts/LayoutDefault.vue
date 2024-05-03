@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia'
 import useThemeStore from '@/stores/theme'
 import PageHeader from '@/components/layouts/PageHeader.vue'
+import PageFooter from '@/components/layouts/PageFooter.vue'
 
 const { currentTheme } = storeToRefs(useThemeStore())
 const { toggleDark } = useThemeStore()
@@ -14,6 +15,7 @@ const { toggleDark } = useThemeStore()
       <button @click="toggleDark">Theme</button>
       <slot />
     </main>
+    <PageFooter />
   </div>
 </template>
 <style lang="scss"></style>

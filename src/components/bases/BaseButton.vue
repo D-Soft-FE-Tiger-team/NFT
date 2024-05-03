@@ -1,25 +1,29 @@
 <script setup lang="ts">
 import { computed, type PropType } from 'vue'
 
-type ButtonType = 'button' | 'submit' | 'reset' | undefined
-type VariantType = 'filled' | 'gradient' | 'outlined' | 'text' | 'icon' | undefined
-type SizeType = 'large' | 'medium' | 'small' | 'extraSmall' | undefined
+type ButtonTypes = 'button' | 'submit' | 'reset' | undefined
+type VariantTypes = 'filled' | 'gradient' | 'outlined' | 'text' | 'icon' | undefined
+type SizeTypes = 'large' | 'medium' | 'small' | 'extraSmall' | undefined
 
 const props = defineProps({
   type: {
-    type: String as PropType<ButtonType>,
+    type: String as PropType<ButtonTypes>,
     default: 'button',
     validator: (value: string) => ['button', 'submit', 'reset'].includes(value),
   },
   variant: {
-    type: String as PropType<VariantType>,
+    type: String as PropType<VariantTypes>,
     default: 'gradient',
     validator: (value: string) => ['filled', 'gradient', 'outlined', 'text', 'icon'].includes(value),
   },
   size: {
-    type: String as PropType<SizeType>,
+    type: String as PropType<SizeTypes>,
     default: 'medium',
     validator: (value: string) => ['large', 'medium', 'small', 'extraSmall'].includes(value),
+  },
+  rounded: {
+    type: Boolean,
+    default: true,
   },
   leftIcon: {
     type: Object,
@@ -61,8 +65,6 @@ const variantClass = computed(() => {
       return 'outlined'
     case 'text':
       return 'text'
-    case 'icon':
-      return 'icon'
     default:
       return 'gradient'
   }
@@ -84,14 +86,15 @@ const sizeClass = computed(() => {
 })
 
 const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
+const roundedClass = computed(() => (props.rounded ? 'rounded-full' : null))
 </script>
 
 <template>
   <button
     :type="props.type"
     :disabled="props.disable || props.loading"
+    :class="['btn', variantClass, sizeClass, fullWidthClass, roundedClass, classes]"
     @click="emit('click')"
-    :class="['btn', variantClass, sizeClass, fullWidthClass, classes]"
     v-bind="$attrs"
   >
     <component :is="props.leftIcon" v-if="!props.loading" class="btn-left-icon" />
@@ -108,9 +111,8 @@ const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
   align-items: center;
   justify-content: center;
   gap: 2px;
-  padding: 6px 24px;
+  // padding: 6px 24px;
   height: 50px;
-  border-radius: 90px;
   font-family: var(--ff-primary);
   cursor: pointer;
 
@@ -142,15 +144,6 @@ const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
     color: var(--c-black-1);
   }
 
-  &.icon {
-    height: 44px;
-    width: 44px;
-    border-radius: 90px;
-    background-color: var(--c-white-1);
-    border: 2px solid var(--c-gray-3);
-    color: var(--c-black-1);
-  }
-
   &.large {
     width: 200px;
   }
@@ -166,6 +159,10 @@ const fullWidthClass = computed(() => (props.fullWidth ? 'fullWidth' : null))
   &.extraSmall {
     width: 70px;
     height: 44px;
+  }
+
+  &.rounded-full {
+    border-radius: 90px;
   }
 
   &.fullWidth {

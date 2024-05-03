@@ -2,8 +2,9 @@
   //### color
   --c-brand-1: linear-gradient(85deg, var(--c-orange-1) 0%, var(--c-red-1) 100%);
   --c-brand-2: linear-gradient(225deg, var(--c-orange-1) 0%, var(--c-red-1) 100%);
-  --c-orange-1: #fe8c00;
-  --c-orange-2: #f4b7a1;
+  --c-orange-1: #c0542b;
+  --c-orange-2: #fe8c00;
+  --c-orange-3: #f4b7a1;
 
   // red
   --c-red-1: #f83600;
@@ -13,7 +14,6 @@
   // black
   --c-black-1: #050505;
   // white
-  --c-white-1: #fff;
   // green
   --c-green-1: #00cb9a;
   --c-green-2: #40c72a;
@@ -36,7 +36,15 @@
 }
 
 .dark-theme {
+  --c-primary: var(--c-orange-3);
   --bg-c-primary: var(--c-black-1);
   --text-c-primary: var(--c-white-1);
+  --text-c-secondary: var(--c-gray-1);
+}
+
+.light-theme {
+  --c-primary: var(--c-orange-1);
+  --bg-c-primary: var(--c-white-1);
+  --text-c-primary: var(--c-black-1);
   --text-c-secondary: var(--c-gray-1);
 }
